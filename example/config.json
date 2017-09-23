@@ -1,7 +1,7 @@
 {
     "name": "Example",
     "slug": "example",
-    "version": "0.0.1",
+    "version": "0.0.2",
 
     "description": "Example add-on for Hass.io",
     "maintainer": "Franck Nijhof <frenck@addon.community>",
