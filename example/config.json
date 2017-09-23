@@ -2,7 +2,6 @@
     "name": "Example",
     "slug": "example",
     "version": "0.0.1",
-    "type": "addon",
 
     "description": "Example add-on for Hass.io",
     "maintainer": "Franck Nijhof <frenck@addon.community>",
@@ -17,14 +16,10 @@
         "armhf",
         "i386"
     ],
-    "from": "hassioaddons/base-{arch}",
-    "squashs": true,
     
     "startup": "application",
     "boot": "auto",
 
     "options": {},
-    "schema": {},
-
-    "image": "hassioaddons/example-{arch}"
+    "schema": {}
   }

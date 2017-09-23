@@ -1,0 +1,12 @@
+{
+    "type": "addon",
+    "image": "hassioaddons/example-{arch}",    
+    "squashs": true,
+    "build_from": {
+        "aarch64": "hassioaddons/base-aarch64:latest",
+        "amd64": "hassioaddons/base-amd64:latest",
+        "armhf": "hassioaddons/base-armhf:latest",
+        "i386": "hassioaddons/base-i386:latest"
+    },
+    "args": {}
+}
