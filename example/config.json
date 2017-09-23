@@ -1,0 +1,27 @@
+{
+    "name": "Example",
+    "slug": "example",
+    "version": "1.0",
+    "type": "addon",
+
+    "description": "Example add-on for Hass.io",
+    "maintainer": "Franck Nijhof <frenck@addon.community>",
+    "vendor": "Community Hass.io Addons",
+    "url": "https://addons.community",
+    "source": "https://github.com/hassio-addons/addon-example",
+    "documentation": "https://github.com/hassio-addons/addon-example/tree/master/README.md",
+
+    "arch": [
+        "aarch64",
+        "amd64",
+        "armhf",
+        "i386"
+    ],
+    "from": "hassioaddons/base-{arch}",
+    "squashs": true,
+    
+    "startup": "application",
+    "boot": "auto",
+
+    "image": "hassioaddons/example-{arch}"
+  }

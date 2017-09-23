@@ -1,0 +1,95 @@
+version: 2
+defaults: &defaults
+    machine:
+      image: circleci/classic:edge
+    steps:
+      - run:
+          name: Check docker is running
+          command: docker info
+      - run:
+          name: Pull Community Hass.io Add-ons build environment
+          command: docker pull hassioaddons/build-env:latest
+      - run:
+          name: Log in to Docker Hub
+          command: |
+            if [[ "${CIRCLE_BRANCH}" = "master" || ! -z "${CIRCLE_TAG:-}" ]];
+            then
+              docker login -u ${DOCKER_LOGIN} -p ${DOCKER_PASSWORD}
+            fi
+      - checkout
+      - deploy:
+          name: Build and (maybe) deploy
+          command: |
+              if [[ "${CIRCLE_BRANCH}" = "master" || ! -z "${CIRCLE_TAG:-}" ]];
+              then
+                docker run \
+                  --privileged \
+                  -v ~/.docker:/root/.docker \
+                  -v "$PWD":/docker \
+                  hassioaddons/build-env:latest \
+                  --git \
+                  --image "hassioaddons/example-{arch}" \
+                  --target example \
+                  --${ARCH} \
+                  --push
+              else
+                docker run \
+                  --privileged \
+                  -v ~/.docker:/root/.docker \
+                  -v "$PWD":/docker \
+                  hassioaddons/build-env:latest \
+                  --git \
+                  --image "hassioaddons/example-{arch}" \
+                  --target example \
+                  --${ARCH}
+              fi
+      - deploy:
+          name: Send notification to Microbadger
+          command: |
+              if [[ "${CIRCLE_BRANCH}" = "master" || ! -z "${CIRCLE_TAG:-}" ]];
+              then
+                curl -X POST https://hooks.microbadger.com/images/${MICROBADGER_WEBHOOK}
+              fi
+
+jobs:
+  aarch64:
+    <<: *defaults
+    environment:
+      ARCH: aarch64
+      MICROBADGER_WEBHOOK: hassioaddons/base-aarch64/xPXzVNfmlHE-TbnO6_v2_G5XVt4=
+  amd64:
+    <<: *defaults
+    environment:
+      ARCH: amd64
+      MICROBADGER_WEBHOOK: hassioaddons/base-amd64/9VpSGXcF3-G8pL-mKXq-0WWvG3g=
+  armhf:
+    <<: *defaults
+    environment:
+      ARCH: armhf
+      MICROBADGER_WEBHOOK: hassioaddons/base-armhf/PzdnuORNZ7a76EmFKI1mrby2p74=
+  i386:
+    <<: *defaults
+    environment:
+      ARCH: i386
+      MICROBADGER_WEBHOOK: hassioaddons/base-i386/te8Hu20AiumjGJbSK0Bf99iivhI=
+
+workflows:
+  version: 2
+  build_and_maybe_deploy:
+    jobs:
+      - aarch64:
+          filters:
+            tags:
+              only: /.*/
+      - amd64:
+          filters:
+            tags:
+              only: /.*/
+      - armhf:
+          filters:
+            tags:
+              only: /.*/
+      - i386:
+          filters:
+            tags:
+              only: /.*/
