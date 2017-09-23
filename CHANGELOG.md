@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
-No changes yet
+No unreleased changes yet.
+
+## [v0.0.2][v0.0.2] (2017-09-23)
+
+[Full Changelog][v0.0.1-v0.0.2]
+
+### Added
+
+- Hass.io 0.64 compatibility [#1][1]
 
 ## [v0.0.1] (2017-09-23)
 
@@ -15,6 +23,9 @@ No changes yet
 
 - Initial version, first release.
 
+[1]: https://github.com/hassio-addons/addon-example/pull/1
 [keep-a-changelog]: http://keepachangelog.com/en/1.0.0/
 [semantic-versioning]: http://semver.org/spec/v2.0.0.html
+[v0.0.1-v0.0.2]: https://github.com/hassio-addons/addon-example/compare/v0.0.1...v0.0.2
 [v0.0.1]: https://github.com/hassio-addons/addon-example/tree/v0.0.1
+[v0.0.2]: https://github.com/hassio-addons/addon-example/tree/v0.0.2
