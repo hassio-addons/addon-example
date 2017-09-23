@@ -56,22 +56,22 @@ jobs:
     <<: *defaults
     environment:
       ARCH: aarch64
-      MICROBADGER_WEBHOOK: hassioaddons/base-aarch64/xPXzVNfmlHE-TbnO6_v2_G5XVt4=
+      MICROBADGER_WEBHOOK: hassioaddons/example-aarch64/-Dsmq0eEcKOq2p99bLUJj19dsxw=
   amd64:
     <<: *defaults
     environment:
       ARCH: amd64
-      MICROBADGER_WEBHOOK: hassioaddons/base-amd64/9VpSGXcF3-G8pL-mKXq-0WWvG3g=
+      MICROBADGER_WEBHOOK: hassioaddons/example-amd64/6y5xU8A6MPYM7MpwC3jx6UUMiII=
   armhf:
     <<: *defaults
     environment:
       ARCH: armhf
-      MICROBADGER_WEBHOOK: hassioaddons/base-armhf/PzdnuORNZ7a76EmFKI1mrby2p74=
+      MICROBADGER_WEBHOOK: hassioaddons/example-armhf/H4v2thSWt5AJDl2_zNgujH0x_NA=
   i386:
     <<: *defaults
     environment:
       ARCH: i386
-      MICROBADGER_WEBHOOK: hassioaddons/base-i386/te8Hu20AiumjGJbSK0Bf99iivhI=
+      MICROBADGER_WEBHOOK: hassioaddons/example-i386/MhziqAtkr5Xpo9irIKe0qbsF5T8=
 
 workflows:
   version: 2
