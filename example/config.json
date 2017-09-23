@@ -23,5 +23,8 @@
     "startup": "application",
     "boot": "auto",
 
+    "options": {},
+    "schema": {},
+
     "image": "hassioaddons/example-{arch}"
   }
