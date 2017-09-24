@@ -1,6 +1,6 @@
 {
     "image": "hassioaddons/example-{arch}",    
-    "squashs": true,
+    "squashs": false,
     "build_from": {
         "aarch64": "hassioaddons/base-aarch64:latest",
         "amd64": "hassioaddons/base-amd64:latest",
