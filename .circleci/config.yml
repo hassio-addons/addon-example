@@ -28,7 +28,7 @@ defaults: &defaults
                   hassioaddons/build-env:latest \
                   --target example \
                   --${ARCH} \
-                  --version ${CIRCLE_TAG} \
+                  --version ${CIRCLE_TAG#v} \
                   --tag-latest \
                   --push              
               elif [[ "${CIRCLE_BRANCH}" = "master" ]]; then
@@ -39,7 +39,7 @@ defaults: &defaults
                   hassioaddons/build-env:latest \
                   --target example \
                   --${ARCH} \
-                  --version ${CIRCLE_SHA1} \
+                  --version ${CIRCLE_SHA1:0:5} \
                   --tag-test \
                   --push
               else
