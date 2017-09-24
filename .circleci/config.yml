@@ -22,7 +22,6 @@ defaults: &defaults
           command: |
               if [[ ! -z "${CIRCLE_TAG:-}" ]]; then
                 docker run \
-                  --privileged \
                   -v ~/.docker:/root/.docker \
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
@@ -33,7 +32,6 @@ defaults: &defaults
                   --push              
               elif [[ "${CIRCLE_BRANCH}" = "master" ]]; then
                 docker run \
-                  --privileged \
                   -v ~/.docker:/root/.docker \
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
@@ -44,8 +42,6 @@ defaults: &defaults
                   --push
               else
                 docker run \
-                  --privileged \
-                  -v ~/.docker:/root/.docker \
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
                   --target example \
