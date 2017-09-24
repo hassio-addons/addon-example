@@ -41,19 +41,12 @@ It shows off several features and structures like:
 
 - Full blown GitHub repository.
 - General Dockerfile structure and setup.
-- The use of the `config.json` file.
+- The use of the `config.json` and `build.sh` file.
 - General shell scripting structure (`run.sh`).
 - Quality assurance using CodeClimate.
 - Continuous integration and deployment using CircleCI.
 - Usage of the Community Hass.io Add-ons build environment.
-
-## Stuff not yet in this example
-
-We are still working on adding more cases and examples to this addon.
-Things on the short list:
-
-- Add TravisCI example
-- Read and use variables from configuration
+- The use of Docker label schema
 
 ## Changelog
 
