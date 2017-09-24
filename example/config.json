@@ -1,14 +1,8 @@
 {
     "name": "Example",
     "slug": "example",
-    "version": "0.0.2",
-
-    "description": "Example add-on for Hass.io",
-    "maintainer": "Franck Nijhof <frenck@addon.community>",
-    "vendor": "Community Hass.io Addons",
+    "version": "0.0.3",
     "url": "https://addons.community",
-    "source": "https://github.com/hassio-addons/addon-example",
-    "documentation": "https://github.com/hassio-addons/addon-example/tree/master/README.md",
 
     "arch": [
         "aarch64",
