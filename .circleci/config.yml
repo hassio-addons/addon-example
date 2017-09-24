@@ -20,26 +20,33 @@ defaults: &defaults
       - deploy:
           name: Build and (maybe) deploy
           command: |
-              if [[ "${CIRCLE_BRANCH}" = "master" || ! -z "${CIRCLE_TAG:-}" ]];
-              then
+              if [[ ! -z "${CIRCLE_TAG:-}" ]]; then
                 docker run \
                   --privileged \
                   -v ~/.docker:/root/.docker \
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
-                  --git \
-                  --image "hassioaddons/example-{arch}" \
                   --target example \
                   --${ARCH} \
+                  --version ${CIRCLE_TAG} \
+                  --tag-latest \
+                  --push              
+              elif [[ "${CIRCLE_BRANCH}" = "master" ]]; then
+                docker run \
+                  --privileged \
+                  -v ~/.docker:/root/.docker \
+                  -v "$PWD":/docker \
+                  hassioaddons/build-env:latest \
+                  --target example \
+                  --${ARCH} \
+                  --version ${CIRCLE_SHA1} \
+                  --tag-test \
                   --push
               else
                 docker run \
                   --privileged \
-                  -v ~/.docker:/root/.docker \
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
-                  --git \
-                  --image "hassioaddons/example-{arch}" \
                   --target example \
                   --${ARCH}
               fi
