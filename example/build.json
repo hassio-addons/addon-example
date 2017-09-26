@@ -1,5 +1,5 @@
 {
-    "image": "hassioaddons/example-{arch}",    
+    "image": "hassioaddons/example-{arch}",
     "squash": false,
     "build_from": {
         "aarch64": "hassioaddons/base-aarch64:latest",
