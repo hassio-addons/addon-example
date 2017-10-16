@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v0.0.4][v0.0.4] (2017-09-26)
+
+[Full Changelog][v0.0.3-v0.0.4]
+
+### Changed
+
+- Match recent build environment changes
+
 ## [v0.0.3][v0.0.3] (2017-09-24)
 
 [Full Changelog][v0.0.2-v0.0.3]
@@ -39,4 +47,6 @@ No unreleased changes yet.
 [v0.0.1]: https://github.com/hassio-addons/addon-example/tree/v0.0.1
 [v0.0.2-v0.0.3]: https://github.com/hassio-addons/addon-example/compare/v0.0.2...v0.0.3
 [v0.0.2]: https://github.com/hassio-addons/addon-example/tree/v0.0.2
+[v0.0.3-v0.0.4]: https://github.com/hassio-addons/addon-example/compare/v0.0.3...v0.0.4
 [v0.0.3]: https://github.com/hassio-addons/addon-example/tree/v0.0.3
+[v0.0.4]: https://github.com/hassio-addons/addon-example/tree/v0.0.4
