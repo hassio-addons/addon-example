@@ -1,7 +1,7 @@
 {
     "name": "Example",
+    "version": "dev",
     "slug": "example",
-    "version": "0.0.3",
     "description": "Example add-on by Community Hass.io Add-ons",
     "url": "https://github.com/hassio-addons/addon-example",
     "startup": "application",
