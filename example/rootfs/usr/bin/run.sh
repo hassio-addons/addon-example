@@ -21,7 +21,7 @@ source /usr/lib/hassio-addons/base.sh
 # Arguments:
 #   None
 # Returns:
-#   None
+#   String with the quote
 # ------------------------------------------------------------------------------
 get_quote_online() {
     local number
@@ -49,7 +49,7 @@ get_quote_online() {
 # Arguments:
 #   None
 # Returns:
-#   None
+#   String with the quote
 # ------------------------------------------------------------------------------
 get_quote_offline() {
     local -i number
@@ -77,7 +77,7 @@ get_quote_offline() {
 # Arguments:
 #   None
 # Returns:
-#   None
+#   String with the quote
 # -----------------------------------------------------------------------------
 display_quote() {
     local quote
@@ -101,18 +101,15 @@ display_quote() {
 # ==============================================================================
 # RUN LOGIC
 # ------------------------------------------------------------------------------
-# Globals:
-#   EX_OK
-# Arguments:
-#   None
-# Returns:
-#   None
-# ------------------------------------------------------------------------------
 main() {
-    # Display a quote every 5 seconds
+    local sleep
+
+    sleep=$(hass.config.get 'seconds_between_quotes')
+    hass.log.info "Seconds between each quotes is set to: ${sleep}"
+
     while true; do
         display_quote
-        sleep 5
+        sleep "${sleep}"
     done
 }
 main "$@"
