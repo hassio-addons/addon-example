@@ -41,18 +41,26 @@ It shows off several features and structures like:
 
 - Full blown GitHub repository.
 - General Dockerfile structure and setup.
-- The use of the `config.json` and `build.sh` file.
+- The use of the `config.json` and `build.json` file.
 - General shell scripting structure (`run.sh`).
 - Quality assurance using CodeClimate.
 - Continuous integration and deployment using CircleCI.
 - Usage of the Community Hass.io Add-ons build environment.
-- The use of Docker label schema
+- Small use of the Bash function library in our base images.
+- The use of Docker label schema.
 
-## Changelog
+## Changelog & Releases
 
-This repository keeps a [change log](CHANGELOG.md) and adhere to
-[Semantic Versioning][semver]. The format of the log is based on
-[Keep a Changelog][keepchangelog].
+This repository keeps a [change log](CHANGELOG.md). The format of the log
+is based on [Keep a Changelog][keepchangelog].
+
+Releases are based on [Semantic Versioning][semver], and use the format
+of ``MAJOR.MINOR.PATCH``. In a nutshell, the version will be incremented
+based on the following:
+
+- ``MAJOR``: Incompatible or major changes.
+- ``MINOR``: Backwards-compatible new features and enhancements.
+- ``PATCH``: Backwards-compatible bugfixes and package updates.
 
 ## Support
 
@@ -73,7 +81,8 @@ You could also [open an issue here][issue] GitHub.
 This is an active open-source project. We are always open to people who want to
 use the code or contribute to it.
 
-We've set up a separate document for our [contribution guidelines](CONTRIBUTING.md).
+We've set up a separate document for our
+[contribution guidelines](CONTRIBUTING.md).
 
 Thank you for being involved! :heart_eyes:
 
@@ -84,7 +93,7 @@ The original setup of this repository is by [Franck Nijhof][frenck].
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
 
-## We've got some Hass.io add-ons for you
+## We have got some Hass.io add-ons for you
 
 Want some more functionality to your Hass.io Home Assistant instance?
 
