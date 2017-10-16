@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/with-contenv bash
 # ==============================================================================
 #
 # Community Hass.io Add-ons: Example
@@ -12,128 +12,12 @@ set -o errtrace # Exit on error inside any functions or sub-shells
 set -o nounset  # Exit script on use of an undefined variable
 set -o pipefail # Return exit status of the last command in the pipe that failed
 
-# ==============================================================================
-# GLOBALS
-# ==============================================================================
-readonly EX_OK=0                # Successful termination
-readonly EX_UNKNOWN=1           # Unknown error occured
-
-# Global variables
-declare TRAPPED
-
-# Default values
-TRAPPED=false
-
-# ==============================================================================
-# UTILITY
-# ==============================================================================
-
-# ------------------------------------------------------------------------------
-# Displays a simple program header
-#
-# Globals:
-#   None
-# Arguments:
-#   None
-# Returns:
-#   None
-# ------------------------------------------------------------------------------
-display_banner() {
-    echo '---------------------------------------------------------'
-    echo 'Community Hass.io Add-ons: Example'
-    echo '---------------------------------------------------------'
-}
-
-# ------------------------------------------------------------------------------
-# Displays a error message and is able to terminate te script execution
-#
-# Globals:
-#   None
-# Arguments:
-#   $1 Error message
-#   $2 Exit code, script will continue execution when omitted
-# Returns:
-#   None
-# ------------------------------------------------------------------------------
-display_error_message() {
-  local status=${1}
-  local exitcode=${2:-0}
-
-  echo >&2
-  echo " !     ERROR: ${status}"
-  echo >&2
-
-  if [[ ${exitcode} -ne 0 ]]; then
-    exit "${exitcode}"
-  fi
-}
-
-# ------------------------------------------------------------------------------
-# Displays a notice
-#
-# Globals:
-#   None
-# Arguments:
-#   $* Notice message to display
-# Returns:
-#   Exit code
-# ------------------------------------------------------------------------------
-display_notice_message() {
-  local status=$*
-
-  echo
-  echo "NOTICE: ${status}"
-  echo
-}
-
-# ------------------------------------------------------------------------------
-# Displays a status message
-#
-# Globals:
-#   None
-# Arguments:
-#   $* Status message to display
-# Returns:
-#   Exit code
-# ------------------------------------------------------------------------------
-display_status_message() {
-  local status=$*
-
-  echo
-  echo "-----> ${status}"
-  echo
-}
-
-# ==============================================================================
-# SCRIPT LOGIC
-# ==============================================================================
-
-# ------------------------------------------------------------------------------
-# Cleanup function after execution is of the script is stopped. (trap)
-#
-# Globals:
-#   EX_OK
-#   TRAPPED
-# Arguments:
-#   $1 Exit code
-# Returns:
-#   None
-# ------------------------------------------------------------------------------
-cleanup_on_exit() {
-    local exit_code=${1}
-    # Prevent double cleanup. Thx Bash :)
-    if [[ "${TRAPPED}" != true ]]; then
-        # Add your cleanup logic here
-        display_notice_message "Doing a fake cleanup... ;)"
-    fi
-    exit "${exit_code}"
-}
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
 
 # ------------------------------------------------------------------------------
 # Get a random quote from quotationspage.com
 #
-# Globals:
-#   None
 # Arguments:
 #   None
 # Returns:
@@ -162,8 +46,6 @@ get_quote_online() {
 # ------------------------------------------------------------------------------
 # Get a random quote from a prefined set of quotes
 #
-# Globals:
-#   None
 # Arguments:
 #   None
 # Returns:
@@ -192,8 +74,6 @@ get_quote_offline() {
 # ------------------------------------------------------------------------------
 # Displays a random quote
 #
-# Globals:
-#   None
 # Arguments:
 #   None
 # Returns:
@@ -206,7 +86,7 @@ display_quote() {
     if wget -q --spider http://www.quotationspage.com; then
         quote=$(get_quote_online)
     else
-        display_notice_message \
+        hass.log.notice \
             'Could not connect to quotationspage.com, using an offline quote'
         quote=$(get_quote_offline)
     fi 
@@ -214,7 +94,7 @@ display_quote() {
     quote=$(sed 's/n()//g' <<< "${quote}" | xargs -0 echo | fmt -40)
     timestamp=$(date +"%T")
 
-    display_status_message "Random quote loaded @ ${timestamp}"
+    hass.log.info "Random quote loaded @ ${timestamp}"
     echo -e "${quote}"
 }
 
@@ -229,23 +109,10 @@ display_quote() {
 #   None
 # ------------------------------------------------------------------------------
 main() {
-    trap 'cleanup_on_exit $?' EXIT SIGINT SIGTERM
-
-    # Display program banner
-    display_banner
-
     # Display a quote every 5 seconds
     while true; do
         display_quote
         sleep 5
     done
-
-    # Fin
-    exit "${EX_OK}"
 }
-
-# Bootstrap
-if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
-    # Direct call to file
-    main "$@"
-fi  # Else file is included from another script
+main "$@"

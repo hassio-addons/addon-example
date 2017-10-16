@@ -8,7 +8,8 @@ RUN \
     apk add --no-cache coreutils wget \
     && chmod a+x /run.sh
 
-CMD [ "/run.sh" ]
+# Scrip to run after startup
+CMD [ "/usr/bin/run.sh" ]
 
 # Build arugments
 ARG BUILD_ARCH
