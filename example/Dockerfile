@@ -18,6 +18,8 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
+    io.hass.name="Example for ${BUILD_ARCH}" \
+    io.hass.description="Example add-on by Community Hass.io Add-ons" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
