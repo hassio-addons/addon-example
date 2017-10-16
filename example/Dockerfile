@@ -4,9 +4,8 @@ FROM ${BUILD_FROM}
 # Copy root filesystem
 COPY rootfs /
 
-RUN \
-    apk add --no-cache coreutils wget \
-    && chmod a+x /run.sh
+# Setup base
+RUN apk add --no-cache coreutils wget
 
 # Scrip to run after startup
 CMD [ "/usr/bin/run.sh" ]
