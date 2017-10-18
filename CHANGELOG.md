@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
-No unreleased changes yet.
+### Changed
+
+- Moved run.sh into /usr/bin
+- Moved correcting file permission from Dockerfile into S6
+- Updated README.md
+- Updates config.json with some extra parameters
+- Added new Hass.io Docker labels
+- Added example options to add-on
+- Moved resulting image build name from build.json into CircleCI
+- Locked down base image version
+- Changed add-on version to 'dev'
 
 ## [v0.0.4][v0.0.4] (2017-09-26)
 

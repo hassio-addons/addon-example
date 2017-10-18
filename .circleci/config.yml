@@ -27,6 +27,7 @@ defaults: &defaults
                   -v ~/.docker:/root/.docker \
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
+                  --image "hassioaddons/example-{arch}" \
                   --git \
                   --target example \
                   --${ARCH} \
@@ -36,6 +37,7 @@ defaults: &defaults
                   --privileged \
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
+                  --image "hassioaddons/example-{arch}" \
                   --git \
                   --target example \
                   --${ARCH}

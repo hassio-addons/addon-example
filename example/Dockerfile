@@ -1,14 +1,14 @@
-ARG BUILD_FROM=hassioaddons/base-amd64
+ARG BUILD_FROM=hassioaddons/base-amd64:1.0.0
 FROM ${BUILD_FROM}
 
 # Copy root filesystem
 COPY rootfs /
 
-RUN \
-    apk add --no-cache coreutils wget \
-    && chmod a+x /run.sh
+# Setup base
+RUN apk add --no-cache coreutils wget
 
-CMD [ "/run.sh" ]
+# Scrip to run after startup
+CMD [ "/usr/bin/run.sh" ]
 
 # Build arugments
 ARG BUILD_ARCH
@@ -18,6 +18,8 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
+    io.hass.name="Example for ${BUILD_ARCH}" \
+    io.hass.description="Example add-on by Community Hass.io Add-ons" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
