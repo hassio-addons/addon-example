@@ -19,6 +19,23 @@
 
 Example add-on by Community Hass.io add-ons.
 
+## About
+
+This is an example add-on for Hass.io. When started, it will display a
+random quote every 5 seconds.
+
+It shows off several features and structures like:
+
+- Full blown GitHub repository.
+- General Dockerfile structure and setup.
+- The use of the `config.json` and `build.json` files.
+- General shell scripting structure (`run.sh`).
+- Quality assurance using CodeClimate.
+- Continuous integration and deployment using CircleCI.
+- Usage of the Community Hass.io Add-ons build environment.
+- Small use of the Bash function library in our base images.
+- The use of Docker label schema.
+
 ## Docker status
 
 [![Docker Architecture][armhf-arch-shield]][armhf-dockerhub]
@@ -40,23 +57,6 @@ Example add-on by Community Hass.io add-ons.
 [![Docker Version][i386-version-shield]][i386-microbadger]
 [![Docker Layers][i386-layers-shield]][i386-microbadger]
 [![Docker Pulls][i386-pulls-shield]][i386-dockerhub]
-
-## About
-
-This is an example add-on for Hass.io. When started, it will display a
-random quote every 5 seconds.
-
-It shows off several features and structures like:
-
-- Full blown GitHub repository.
-- General Dockerfile structure and setup.
-- The use of the `config.json` and `build.json` files.
-- General shell scripting structure (`run.sh`).
-- Quality assurance using CodeClimate.
-- Continuous integration and deployment using CircleCI.
-- Usage of the Community Hass.io Add-ons build environment.
-- Small use of the Bash function library in our base images.
-- The use of Docker label schema.
 
 ## Changelog & Releases
 
