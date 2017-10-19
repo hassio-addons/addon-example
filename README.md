@@ -21,7 +21,7 @@ Example add-on by Community Hass.io add-ons.
 
 ## About
 
-This is an example add-on for Hass.io. When started, it will display a
+This is an example add-on for Hass.io. When started, it displays a
 random quote every 5 seconds.
 
 It shows off several features and structures like:
@@ -35,6 +35,19 @@ It shows off several features and structures like:
 - Usage of the Community Hass.io Add-ons build environment.
 - Small use of the Bash function library in our base images.
 - The use of Docker label schema.
+
+## Installation
+
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Hass.io add-on.
+
+1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Install the "Example" add-on
+1. Start the "Example" add-on
+1. Check the logs of the "Example" add-on to see it in action.
+
+**NOTE**: Do not add this repository to Hass.io, please use:
+`https://github.com/hassio-addons/repository`.
 
 ## Docker status
 
@@ -57,6 +70,46 @@ It shows off several features and structures like:
 [![Docker Version][i386-version-shield]][i386-microbadger]
 [![Docker Layers][i386-layers-shield]][i386-microbadger]
 [![Docker Pulls][i386-pulls-shield]][i386-dockerhub]
+
+## Configuration
+
+Eventought this add-on is just an example add-on, it does come with some
+configuration options to play around with.
+
+**Note**: _Remember to restart the add-on when the configuration is changed._
+
+Example add-on configuration:
+
+```json
+{
+  "log_level": "info",
+  "seconds_between_quotes": 5
+}
+```
+
+### Option: `log_level`
+
+The `log_level` option controls the level of log output by the addon and can
+be changed to be more or less verbose, which might be useful when you are
+dealing with an unknown issue. Possible values are:
+
+- `trace`: Show every detail, like all called internal functions.
+- `debug`: Shows detailed debug information.
+- `info`: Normal (usually) interesting events.
+- `warning`: Exceptional occurrences that are not errors.
+- `error`:  Runtime errors that do not require immediate action.
+- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+
+Please note that each level automatically includes log messages from a
+more severe level, e.g., `debug` also shows `info` messages. By default,
+the `log_level` is set to `info`, which is the recommended setting unless
+you are troubleshooting.
+
+### Option: `seconds_between_quotes`
+
+Sets the number of seconds between the output of each quote. The value
+must be between `1` and `120` seconds. This value is set to `5` seconds by
+default.
 
 ## Changelog & Releases
 
@@ -90,7 +143,7 @@ You could also [open an issue here][issue] GitHub.
 This is an active open-source project. We are always open to people who want to
 use the code or contribute to it.
 
-We've set up a separate document for our
+We have set up a separate document containing our
 [contribution guidelines](CONTRIBUTING.md).
 
 Thank you for being involved! :heart_eyes:
