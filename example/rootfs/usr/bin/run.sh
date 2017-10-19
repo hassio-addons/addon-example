@@ -28,6 +28,8 @@ get_quote_online() {
     local html
     local quote
 
+    hass.log.trace "${FUNCNAME[0]}"
+
     number=$(( ( RANDOM % 999 )  + 1 ))
     html=$(wget -q -O - "http://www.quotationspage.com/quote/${number}.html")
 
@@ -54,6 +56,8 @@ get_quote_online() {
 get_quote_offline() {
     local -i number
     local -a quotes
+
+    hass.log.trace "${FUNCNAME[0]}"
 
     quotes+=("Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better.\n -Samuel Beckett")
     quotes+=("Never give up, for that is just the place and time that the tide will turn.\n -Harriet Beecher Stowe")
@@ -83,6 +87,8 @@ display_quote() {
     local quote
     local timestamp
 
+    hass.log.trace "${FUNCNAME[0]}"
+
     if wget -q --spider http://www.quotationspage.com; then
         quote=$(get_quote_online)
     else
@@ -103,6 +109,8 @@ display_quote() {
 # ------------------------------------------------------------------------------
 main() {
     local sleep
+
+    hass.log.trace "${FUNCNAME[0]}"
 
     sleep=$(hass.config.get 'seconds_between_quotes')
     hass.log.info "Seconds between each quotes is set to: ${sleep}"
