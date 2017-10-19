@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+There a no unreleased changes yet.
+
+## [v1.0.0][v1.0.0] (2017-10-19)
+
+[Full Changelog][v0.0.4-v1.0.0]
+
 ### Changed
 
 - Moved run.sh into /usr/bin
@@ -59,4 +65,6 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 [v0.0.2]: https://github.com/hassio-addons/addon-example/tree/v0.0.2
 [v0.0.3-v0.0.4]: https://github.com/hassio-addons/addon-example/compare/v0.0.3...v0.0.4
 [v0.0.3]: https://github.com/hassio-addons/addon-example/tree/v0.0.3
+[v0.0.4-v1.0.0]: https://github.com/hassio-addons/addon-example/compare/v0.0.4...v1.0.0
 [v0.0.4]: https://github.com/hassio-addons/addon-example/tree/v0.0.4
+[v1.0.0]: https://github.com/hassio-addons/addon-example/tree/v1.0.0
