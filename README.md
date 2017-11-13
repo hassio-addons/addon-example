@@ -12,7 +12,6 @@
 [![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
 
-[![Gratipay][gratipay-shield]][gratipay]
 [![Patreon][patreon-shield]][patreon]
 [![PayPal][paypal-shield]][paypal]
 [![Bitcoin][bitcoin-shield]][bitcoin]
@@ -220,8 +219,6 @@ SOFTWARE.
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
 [frenck]: https://github.com/frenck
-[gratipay-shield]: https://img.shields.io/badge/donate-gratipay-blue.svg
-[gratipay]: https://gratipay.com/hassio-addons/
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
 [i386-dockerhub]: https://hub.docker.com/r/hassioaddons/example-i386
 [i386-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/example-i386.svg
