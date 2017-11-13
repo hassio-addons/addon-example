@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
-There a no unreleased changes yet.
+### Removed
+
+- Removes `repository.json` to prevent user to install wrong repo
 
 ## [v1.0.1] (2017-10-30)
 
