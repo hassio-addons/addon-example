@@ -7,9 +7,20 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## [v1.1.0] (2017-12-03)
+
+[Full Changelog][v1.0.1-v1.1.0]
+
+### Changed
+
+- Upgrades add-on base iamge to v1.2.0
+
 ### Removed
 
 - Removes `repository.json` to prevent user to install wrong repo
+- Removes Gratipay from README, since it is EOL
 
 ## [v1.0.1] (2017-10-30)
 
@@ -77,4 +88,6 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 [v0.0.4]: https://github.com/hassio-addons/addon-example/tree/v0.0.4
 [v1.0.0-v1.0.1]: https://github.com/hassio-addons/addon-example/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/hassio-addons/addon-example/tree/v1.0.0
+[v1.0.1-v1.1.0]: https://github.com/hassio-addons/addon-example/compare/v1.0.1...v1.1.0
 [v1.0.1]: https://github.com/hassio-addons/addon-example/tree/v1.0.1
+[v1.1.0]: https://github.com/hassio-addons/addon-example/tree/v1.1.0
