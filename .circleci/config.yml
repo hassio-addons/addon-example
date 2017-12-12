@@ -28,6 +28,7 @@ defaults: &defaults
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
                   --image "hassioaddons/example-{arch}" \
+                  --cache-tag test \
                   --git \
                   --target example \
                   --${ARCH} \
@@ -38,6 +39,7 @@ defaults: &defaults
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
                   --image "hassioaddons/example-{arch}" \
+                  --cache-tag test \
                   --git \
                   --target example \
                   --${ARCH}
