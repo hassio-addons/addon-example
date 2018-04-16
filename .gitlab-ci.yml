@@ -5,12 +5,14 @@ variables:
   DOCKER_DRIVER: overlay2
   ADDON_TARGET: example
   ADDON_IMAGE: hassioaddons/example-{arch}
+  ADDON_GIT_URL: https://github.com/hassio-addons/addon-example
 
 services:
   - docker:dind
 
 before_script:
   - docker info
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
 
 stages:
   - preflight
@@ -26,6 +28,7 @@ stages:
 # Generic build template
 .build: &build
   stage: build
+  variables:
   script:
     - |
       docker run \
@@ -33,43 +36,56 @@ stages:
         -v /var/run/docker.sock:/var/run/docker.sock \
         -v "$PWD":/docker \
         hassioaddons/build-env:latest \
-          --image "${ADDON_IMAGE}" \
-          --cache-tag test \
-          --git \
+          --image "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}" \
+          --cache-tag "test" \
+          --git-url "${ADDON_GIT_URL}" \
           --target "${ADDON_TARGET}" \
+          --git \
+          --push \
           --${ADDON_ARCH}
 
 # Generic deploy template
 .deploy: &deploy
   stage: deploy
   script:
+    - echo "${CI_COMMIT_SHA}"
+    - docker pull "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:${CI_COMMIT_SHA}"
     - docker images
 
-preflight:dockerfile:
+hadolint:
   <<: *preflight
   script:
     - docker run --rm -i hadolint/hadolint < "${ADDON_TARGET}/Dockerfile" || true
 
+codequality:
+  <<: *preflight
+  allow_failure: true
+  script:
+    - export SP_VERSION=$(echo "$CI_SERVER_VERSION" | sed 's/^\([0-9]*\)\.\([0-9]*\).*/\1-\2-stable/')
+    - docker run --env SOURCE_CODE="$PWD" --volume "$PWD":/code --volume /var/run/docker.sock:/var/run/docker.sock "registry.gitlab.com/gitlab-org/security-products/codequality:$SP_VERSION" /code
+  artifacts:
+    paths: [codeclimate.json]
+
 # Build Jobs
-build:armhf:
+buildarmhf:
   <<: *build
   variables:
     ADDON_ARCH: armhf
 
-build:aarch64:
-  <<: *build
-  variables:
-    ADDON_ARCH: aarch64
+#build:aarch64:
+#  <<: *build
+#  variables:
+#    ADDON_ARCH: aarch64
 
-build:i386:
-  <<: *build
-  variables:
-    ADDON_ARCH: i386
+#build:i386:
+#  <<: *build
+#  variables:
+#    ADDON_ARCH: i386
 
-build:amd64:
-  <<: *build
-  variables:
-    ADDON_ARCH: amd64
+#build:amd64:
+#  <<: *build
+#  variables:
+#    ADDON_ARCH: amd64
 
 # Deploy jobs
 deploy:armhf:
