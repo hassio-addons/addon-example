@@ -1,0 +1,89 @@
+---
+image: docker:stable
+
+variables:
+  DOCKER_DRIVER: overlay2
+  ADDON_TARGET: example
+  ADDON_IMAGE: hassioaddons/example-{arch}
+
+services:
+  - docker:dind
+
+before_script:
+  - docker info
+
+stages:
+  - preflight
+  - build
+  - test
+  - deploy
+  - publish
+
+# Generic preflight template
+.preflight: &preflight
+  stage: preflight
+
+# Generic build template
+.build: &build
+  stage: build
+  script:
+    - |
+      docker run \
+        --privileged \
+        -v /var/run/docker.sock:/var/run/docker.sock \
+        -v "$PWD":/docker \
+        hassioaddons/build-env:latest \
+          --image "${ADDON_IMAGE}" \
+          --cache-tag test \
+          --git \
+          --target "${ADDON_TARGET}" \
+          --${ADDON_ARCH}
+
+# Generic deploy template
+.deploy: &deploy
+  stage: deploy
+  script:
+    - docker images
+
+preflight:dockerfile:
+  <<: *preflight
+  script:
+    - docker run --rm -i hadolint/hadolint < "${ADDON_TARGET}/Dockerfile" || true
+
+# Build Jobs
+build:armhf:
+  <<: *build
+  variables:
+    ADDON_ARCH: armhf
+
+build:aarch64:
+  <<: *build
+  variables:
+    ADDON_ARCH: aarch64
+
+build:i386:
+  <<: *build
+  variables:
+    ADDON_ARCH: i386
+
+build:amd64:
+  <<: *build
+  variables:
+    ADDON_ARCH: amd64
+
+# Deploy jobs
+deploy:armhf:
+  <<: *deploy
+  variables:
+    ADDON_ARCH: armhf
+
+#deploy:aarch64:
+#  <<: *deploy
+
+#deploy:i386:
+#  <<: *deploy
+
+#deploy:amd64:
+#  <<: *deploy
+
+#publish:
