@@ -106,8 +106,9 @@ stages:
   stage: deploy
   before_script:
     - docker info
-    - docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASSWORD}"
     - docker login -u gitlab-ci-token -p "${CI_JOB_TOKEN}" registry.gitlab.com
+    - docker pull "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:${CI_COMMIT_SHA}"
+    - docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASSWORD}"
     - docker pull hassioaddons/build-env:test
   script:
     - |
