@@ -115,6 +115,7 @@ stages:
       docker run \
         --privileged \
         --volume /var/run/docker.sock:/var/run/docker.sock \
+        --volume ~/.docker:/root/.docker \
         --volume "$PWD":/docker \
         hassioaddons/build-env:test \
           --image "${DOCKER_HUB_ORG}/${ADDON_SLUG}-${ADDON_ARCH}" \
