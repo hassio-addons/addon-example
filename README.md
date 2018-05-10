@@ -7,7 +7,6 @@
 [![License][license-shield]](LICENSE.md)
 
 [![CircleCI][circleci-shield]][circleci]
-[![Code Climate][codeclimate-shield]][codeclimate]
 [![Bountysource][bountysource-shield]][bountysource]
 [![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
@@ -209,8 +208,6 @@ SOFTWARE.
 [bountysource]: https://www.bountysource.com/teams/hassio-addons/issues
 [circleci-shield]: https://img.shields.io/circleci/project/github/hassio-addons/addon-example.svg
 [circleci]: https://circleci.com/gh/hassio-addons/addon-example
-[codeclimate-shield]: https://img.shields.io/codeclimate/github/hassio-addons/addon-example.svg
-[codeclimate]: https://codeclimate.com/github/hassio-addons/addon-example
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-example.svg
 [commits]: https://github.com/hassio-addons/addon-example/commits/master
 [contributors]: https://github.com/hassio-addons/addon-example/graphs/contributors
