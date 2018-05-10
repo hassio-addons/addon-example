@@ -2,18 +2,17 @@
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
-![Project Maintenance][maintenance-shield]
-[![GitHub Activity][commits-shield]][commits]
 [![License][license-shield]](LICENSE.md)
 
-[![CircleCI][circleci-shield]][circleci]
+[![GitLab CI][gitlabci-shield]][gitlabci]
+![Project Maintenance][maintenance-shield]
+[![GitHub Activity][commits-shield]][commits]
+
 [![Bountysource][bountysource-shield]][bountysource]
 [![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
 
-[![Patreon][patreon-shield]][patreon]
-[![PayPal][paypal-shield]][paypal]
-[![Bitcoin][bitcoin-shield]][bitcoin]
+[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
 Example add-on by Community Hass.io add-ons.
 
@@ -53,21 +52,25 @@ comparison to installing any other Hass.io add-on.
 [![Docker Version][armhf-version-shield]][armhf-microbadger]
 [![Docker Layers][armhf-layers-shield]][armhf-microbadger]
 [![Docker Pulls][armhf-pulls-shield]][armhf-dockerhub]
+[![Anchore Image Overview][armhf-anchore-shield]][armhf-anchore]
 
 [![Docker Architecture][aarch64-arch-shield]][aarch64-dockerhub]
 [![Docker Version][aarch64-version-shield]][aarch64-microbadger]
 [![Docker Layers][aarch64-layers-shield]][aarch64-microbadger]
 [![Docker Pulls][aarch64-pulls-shield]][aarch64-dockerhub]
+[![Anchore Image Overview][aarch64-anchore-shield]][aarch64-anchore]
 
 [![Docker Architecture][amd64-arch-shield]][amd64-dockerhub]
 [![Docker Version][amd64-version-shield]][amd64-microbadger]
 [![Docker Layers][amd64-layers-shield]][amd64-microbadger]
 [![Docker Pulls][amd64-pulls-shield]][amd64-dockerhub]
+[![Anchore Image Overview][amd64-anchore-shield]][amd64-anchore]
 
 [![Docker Architecture][i386-arch-shield]][i386-dockerhub]
 [![Docker Version][i386-version-shield]][i386-microbadger]
 [![Docker Layers][i386-layers-shield]][i386-microbadger]
 [![Docker Pulls][i386-pulls-shield]][i386-dockerhub]
+[![Anchore Image Overview][i386-anchore-shield]][i386-anchore]
 
 ## Configuration
 
@@ -185,30 +188,34 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+[aarch64-anchore-shield]: https://anchore.io/service/badges/image/8f74a497abc908834244d697a67675ecd13080199270598283c8e0cea1b1723e
+[aarch64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fexample-aarch64%3Alatest
 [aarch64-arch-shield]: https://img.shields.io/badge/architecture-aarch64-blue.svg
 [aarch64-dockerhub]: https://hub.docker.com/r/hassioaddons/example-aarch64
 [aarch64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/example-aarch64.svg
 [aarch64-microbadger]: https://microbadger.com/images/hassioaddons/example-aarch64
 [aarch64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/example-aarch64.svg
 [aarch64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/example-aarch64.svg
+[amd64-anchore-shield]: https://anchore.io/service/badges/image/e8858057accd3b85042797097e3ea5b1d80010019bb22a3de32bad5219405319
+[amd64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fexample-amd64%3Alatest
 [amd64-arch-shield]: https://img.shields.io/badge/architecture-amd64-blue.svg
 [amd64-dockerhub]: https://hub.docker.com/r/hassioaddons/example-amd64
 [amd64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/example-amd64.svg
 [amd64-microbadger]: https://microbadger.com/images/hassioaddons/example-amd64
 [amd64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/example-amd64.svg
 [amd64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/example-amd64.svg
+[armhf-anchore-shield]: https://anchore.io/service/badges/image/a86761f8fb7f0b8e0230dd1c51d01ab2acf97e553fbff0149238853fff9f5d3f
+[armhf-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fexample-armhf%3Alatest
 [armhf-arch-shield]: https://img.shields.io/badge/architecture-armhf-blue.svg
 [armhf-dockerhub]: https://hub.docker.com/r/hassioaddons/example-armhf
 [armhf-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/example-armhf.svg
 [armhf-microbadger]: https://microbadger.com/images/hassioaddons/example-armhf
 [armhf-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/example-armhf.svg
 [armhf-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/example-armhf.svg
-[bitcoin-shield]: https://img.shields.io/badge/donate-bitcoin-blue.svg
-[bitcoin]: https://blockchain.info/payment_request?address=3GVzgN6NpVtfXnyg5dQnaujtqVTEDBCtAH
 [bountysource-shield]: https://img.shields.io/bountysource/team/hassio-addons/activity.svg
 [bountysource]: https://www.bountysource.com/teams/hassio-addons/issues
-[circleci-shield]: https://img.shields.io/circleci/project/github/hassio-addons/addon-example.svg
-[circleci]: https://circleci.com/gh/hassio-addons/addon-example
+[buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
+[buymeacoffee]: https://www.buymeacoffee.com/frenck
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-example.svg
 [commits]: https://github.com/hassio-addons/addon-example/commits/master
 [contributors]: https://github.com/hassio-addons/addon-example/graphs/contributors
@@ -217,6 +224,10 @@ SOFTWARE.
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
 [frenck]: https://github.com/frenck
+[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-example/badges/master/pipeline.svg
+[gitlabci]: https://gitlab.com/hassio-addons/addon-example/pipelines
+[i386-anchore-shield]: https://anchore.io/service/badges/image/d2cf5186954b12ccd3d31dcc785b36dfc8306ad850b0b29c3ceea4e466b7123a
+[i386-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fexample-i386%3Alatest
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
 [i386-dockerhub]: https://hub.docker.com/r/hassioaddons/example-i386
 [i386-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/example-i386.svg
@@ -227,10 +238,6 @@ SOFTWARE.
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-example.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
-[patreon-shield]: https://img.shields.io/badge/donate-patreon-blue.svg
-[patreon]: https://www.patreon.com/frenck
-[paypal-shield]: https://img.shields.io/badge/donate-paypal-blue.svg
-[paypal]: https://www.paypal.me/FranckNijhof
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-example.svg
