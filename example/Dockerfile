@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base-amd64:1.3.3
+ARG BUILD_FROM=hassioaddons/base-amd64:1.4.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -8,7 +8,7 @@ COPY rootfs /
 # Setup base
 RUN apk add --no-cache \
     coreutils=8.28-r0 \
-    wget=1.19.2-r1
+    'wget>=1.19.2-r1'
 
 # Scrip to run after startup
 CMD [ "/usr/bin/run.sh" ]
