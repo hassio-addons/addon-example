@@ -11,7 +11,7 @@ RUN apk add --no-cache \
     wget=1.19.5-r0
 
 # Scrip to run after startup
-CMD [ "/usr/bin/run.sh" ]
+CMD ["/usr/bin/run.sh"]
 
 # Build arugments
 ARG BUILD_ARCH
