@@ -119,10 +119,11 @@ Got questions?
 
 You have several options to get them answered:
 
-- The Community Hass.io Add-ons [Discord Chat server][discord] for add-on
+- The [Community Hass.io Add-ons Discord chat server][discord] for add-on
   support and feature requests.
-- The Home Assistant [Discord Chat Server][discord-ha] for general Home
+- The [Home Assistant Discord chat server][discord-ha] for general Home
   Assistant discussions and questions.
+- The Home Assistant [Community Forum][forum].
 - Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
 You could also [open an issue here][issue] GitHub.
