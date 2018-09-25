@@ -13,6 +13,7 @@
     ],
     "boot": "auto",
     "hassio_api": true,
+    "hassio_role": "default",
     "options": {
         "log_level": "info",
         "seconds_between_quotes": 5
