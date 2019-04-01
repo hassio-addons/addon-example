@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 #
 # Community Hass.io Add-ons: Example
@@ -7,13 +7,6 @@
 # This add-on displays a random quote every X seconds.
 #
 # ==============================================================================
-set -o errexit  # Exit script when a command exits with non-zero status
-set -o errtrace # Exit on error inside any functions or sub-shells
-set -o nounset  # Exit script on use of an undefined variable
-set -o pipefail # Return exit status of the last command in the pipe that failed
-
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
 
 # ------------------------------------------------------------------------------
 # Get a random quote from quotationspage.com
@@ -28,7 +21,7 @@ get_quote_online() {
     local html
     local quote
 
-    hass.log.trace "${FUNCNAME[0]}"
+    bashio::log.trace "${FUNCNAME[0]}"
 
     number=$(( ( RANDOM % 999 )  + 1 ))
     html=$(wget -q -O - "http://www.quotationspage.com/quote/${number}.html")
@@ -57,7 +50,7 @@ get_quote_offline() {
     local -i number
     local -a quotes
 
-    hass.log.trace "${FUNCNAME[0]}"
+    bashio::log.trace "${FUNCNAME[0]}"
 
     quotes+=("Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better.\\n -Samuel Beckett")
     quotes+=("Never give up, for that is just the place and time that the tide will turn.\\n -Harriet Beecher Stowe")
@@ -87,12 +80,12 @@ display_quote() {
     local quote
     local timestamp
 
-    hass.log.trace "${FUNCNAME[0]}"
+    bashio::log.trace "${FUNCNAME[0]}"
 
     if wget -q --spider http://www.quotationspage.com; then
         quote=$(get_quote_online)
     else
-        hass.log.notice \
+        bashio::log.notice \
             'Could not connect to quotationspage.com, using an offline quote'
         quote=$(get_quote_offline)
     fi
@@ -100,7 +93,7 @@ display_quote() {
     quote=$(sed 's/n()//g' <<< "${quote}" | xargs -0 echo | fmt -40)
     timestamp=$(date +"%T")
 
-    hass.log.info "Random quote loaded @ ${timestamp}"
+    bashioL::log.info "Random quote loaded @ ${timestamp}"
     echo -e "${quote}"
 }
 
@@ -110,10 +103,10 @@ display_quote() {
 main() {
     local sleep
 
-    hass.log.trace "${FUNCNAME[0]}"
+    bashio::log.trace "${FUNCNAME[0]}"
 
-    sleep=$(hass.config.get 'seconds_between_quotes')
-    hass.log.info "Seconds between each quotes is set to: ${sleep}"
+    sleep=$(bashio::config 'seconds_between_quotes')
+    bashio::log.info "Seconds between each quotes is set to: ${sleep}"
 
     while true; do
         display_quote
