@@ -93,7 +93,7 @@ display_quote() {
     quote=$(sed 's/n()//g' <<< "${quote}" | xargs -0 echo | fmt -40)
     timestamp=$(date +"%T")
 
-    bashioL::log.info "Random quote loaded @ ${timestamp}"
+    bashio::log.info "Random quote loaded @ ${timestamp}"
     echo -e "${quote}"
 }
 
