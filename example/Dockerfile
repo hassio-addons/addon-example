@@ -7,7 +7,7 @@ COPY rootfs /
 
 # Setup base
 RUN apk add --no-cache \
-    coreutils=8.29-r2 \
+    coreutils=8.30-r0 \
     wget=1.20.1-r0
 
 # Scrip to run after startup
