@@ -5,6 +5,6 @@
 # ==============================================================================
 
 
-bashio::log.info "Starting Example1..."
+bashio::log.info "Starting Example2..."
 
 exec /usr/bin/example2.sh
