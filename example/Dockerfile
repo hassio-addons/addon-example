@@ -10,9 +10,6 @@ RUN apk add --no-cache \
     coreutils=8.31-r0 \
     wget=1.20.3-r0
 
-# Scrip to run after startup
-CMD ["/usr/bin/run.sh"]
-
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
