@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Community Hass.io Add-ons: Example
+# Runs example2 script
+# ==============================================================================
+
+
+bashio::log.info "Starting Example2..."
+
+exec /usr/bin/example2.sh
