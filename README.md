@@ -58,11 +58,9 @@ configuration options to play around with.
 
 Example add-on configuration:
 
-```json
-{
-  "log_level": "info",
-  "seconds_between_quotes": 5
-}
+```yaml
+log_level: info
+seconds_between_quotes: 5
 ```
 
 ### Option: `log_level`
