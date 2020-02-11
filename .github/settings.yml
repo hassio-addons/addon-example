@@ -1,8 +1,8 @@
 ---
 repository:
-  description: "Example - Community Hass.io Add-on for Home Assistant"
+  description: "Example - Community Home Assistant Add-ons"
   homepage: https://addons.community
-  topics: examples, hassio-addons, hassio, hass, home-assistant, homeassistant, home-automation
+  topics: examples, addon, addons, home-assistant, homeassistant, home-assistant
   private: false
   has_issues: true
   has_projects: false

@@ -1,10 +1,8 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-#
-# Community Hass.io Add-ons: Example
+# Community Home Assistant Add-on: Example
 #
 # Example add-on for Hass.io.
-#
 # ------------------------------------------------------------------------------
 main() {
     bashio::log.trace "${FUNCNAME[0]}"
