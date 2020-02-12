@@ -1,6 +1,6 @@
 ---
 repository:
-  description: "Example - Community Home Assistant Add-ons"
+  description: "Example - Home Assistant Community Add-ons"
   homepage: https://addons.community
   topics: examples, addon, addons, home-assistant, homeassistant, home-assistant
   private: false

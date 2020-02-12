@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Home Assistant Add-on: Example
+# Home Assistant Community Add-on: Example
 #
 # Example add-on for Hass.io.
 # This add-on displays a random quote every X seconds.
