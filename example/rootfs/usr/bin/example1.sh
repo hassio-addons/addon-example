@@ -2,7 +2,7 @@
 # ==============================================================================
 # Home Assistant Community Add-on: Example
 #
-# Example add-on for Hass.io.
+# Example add-on for Home Assistant.
 # This add-on displays a random quote every X seconds.
 # ==============================================================================
 
