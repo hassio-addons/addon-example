@@ -21,11 +21,11 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Example add-on by Community Hass.io add-ons.
+Example add-on by Community Home Assistant add-ons.
 
 ## About
 
-This is an example add-on for Hass.io. When started, it displays a
+This is an example add-on for Home Assistant. When started, it displays a
 random quote every 5 seconds.
 
 It shows off several features and structures like:
@@ -35,8 +35,8 @@ It shows off several features and structures like:
 - The use of the `config.json` and `build.json` files.
 - General shell scripting structure (`run.sh`).
 - Quality assurance using CodeClimate.
-- Continuous integration and deployment using CircleCI.
-- Usage of the Community Hass.io Add-ons build environment.
+- Continuous integration and deployment using GitLab.
+- Usage of the Community Home Assistant Add-ons build environment.
 - Small use of the Bash function library in our base images.
 - The use of Docker label schema.
 
