@@ -88,6 +88,7 @@ display_quote() {
         quote=$(get_quote_offline)
     fi
 
+    # shellcheck disable=SC2001
     quote=$(sed 's/n()//g' <<< "${quote}" | xargs -0 echo | fmt -40)
     timestamp=$(date +"%T")
 
