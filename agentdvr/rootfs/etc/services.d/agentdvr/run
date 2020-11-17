@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: AgentDVR
+# Runs the AgentDVR Controller
+# ==============================================================================
+
+
+
+
+bashio::log.info 'Starting the AgentDVR...'
+# Run agentdvr
+exec /usr/bin/dotnet /agent/Agent.dll
