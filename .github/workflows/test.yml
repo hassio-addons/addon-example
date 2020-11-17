@@ -16,4 +16,7 @@ jobs:
           --test \
           --all \
           --target /data \
-          --docker-hub jpeterson37
+          --docker-hub jpeterson37 \
+          --repository https://github.com/Jpeterson37/addon-agentdvr \
+          --branch master \
+          --target agentdvr 
