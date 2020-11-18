@@ -18,8 +18,8 @@ RUN apt-get update
 RUN add-apt-repository ppa:jonathonf/ffmpeg-4 && apt-get install -y ffmpeg
 RUN apt-get update  && apt-get install -y libtbb-dev libc6-dev gss-ntlmssp && apt-get install -y libgdiplus && \
     apt install -y multiarch-support && \
-    wget http://security.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo8_1.5.2-0ubuntu5.18.04.4_$BUILD_ARCH.deb && dpkg -i libjpeg-turbo8_1.5.2-0ubuntu5.18.04.4_amd64.deb && \
-    wget http://fr.archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg8-empty/libjpeg8_8c-2ubuntu8_$BUILD_ARCH.deb && dpkg -i libjpeg8_8c-2ubuntu8_amd64.deb
+    wget http://security.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo8_1.5.2-0ubuntu5.18.04.4_$BUILD_ARCH.deb && dpkg -i libjpeg-turbo8_1.5.2-0ubuntu5.18.04.4_$BUILD_ARCH.deb && \
+    wget http://fr.archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg8-empty/libjpeg8_8c-2ubuntu8_$BUILD_ARCH.deb && dpkg -i libjpeg8_8c-2ubuntu8_$BUILD_ARCH.deb
 
 #Download and unpack AgentDVR
 RUN if [ "${FILE_LOCATION_SET}" = "true" ]; then \

@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-16"?>
-<devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <device ipaddress="172.17.0.2" hostname="Unknown" webserver="Python/3.8" />
-</devices>
