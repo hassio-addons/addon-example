@@ -1,0 +1,25 @@
+  
+name: 'Test Build'
+
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  build:
+    name: Test build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+    - name: Test build
+      uses: home-assistant/builder@master
+      with:
+        args: |
+          --test \
+          --all \
+          --target /data \
+          --docker-hub jpeterson37 \
+          --repository https://github.com/Jpeterson37/addon-agentdvr \
+          --branch dev \
+          --target agentdvr
