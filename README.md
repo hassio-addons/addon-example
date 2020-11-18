@@ -1,14 +1,17 @@
+
 # Home Assistant Community Add-on: AgentDVR
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] [![License][license-shield]](LICENSE.md)
 ![Supports amd64 Architecture][amd64-shield]
 ![Supports i386 Architecture][i386-shield]
 ![Project Maintenance][maintenance-shield]
 
+
 [![Support JPeterson37 on Patreon][patreon-shield]][patreon]
 
 ## About
 
 Agent DVR is a free* software DVR solution for windows 10, Mac and Linux. Agent DVR runs as a service or console application and can access and control a huge range of third party cameras with advanced motion detection, including YOLO integration for object recognition. The iSpyConnect website provides secured (SSL) remote access without port forwarding needed.
+
 
 For more information visit [ispyconnect][ispyurl]
 
@@ -29,6 +32,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
@@ -42,3 +46,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-example.svg
+
