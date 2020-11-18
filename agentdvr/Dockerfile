@@ -12,13 +12,14 @@ RUN wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod
 #Install .NET on Linux
 #Install the SDK and Runtime
 # RUN curl https://packages.microsoft.com/keys/microsoft.asc && apt-key add - && apt-add-repository https://packages.microsoft.com/ubuntu/19.10/prod
-RUN apt-get update && \
-    apt-get install -y apt-transport-https && \
-    apt-get update && \
-    apt-get install -y dotnet-sdk-3.1 && \
-    apt-get update && \
-    apt-get install -y aspnetcore-runtime-3.1 && \
-    apt-get install -y dotnet-runtime-3.1
+# RUN apt-get update && \
+#     apt-get install -y apt-transport-https && \
+#     apt-get update && \
+#     apt-get install -y dotnet-sdk-3.1 && \
+#     apt-get update && \
+#     apt-get install -y aspnetcore-runtime-3.1 && \
+#     apt-get install -y dotnet-runtime-3.1
+RUN curl -O https://dot.net/v1/dotnet-install.sh && /bin/bash ./dotnet-install.sh -c 3.1 && rm -rf dotnet-install.sh
 
 #Install AgentDVR dependicies
 RUN apt-get update
