@@ -10,16 +10,7 @@ RUN apt-get update && apt-get install -y curl wget && apt-get install -y softwar
 
 RUN wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb
 
-#Install .NET on Linux
-#Install the SDK and Runtime
-# RUN curl https://packages.microsoft.com/keys/microsoft.asc && apt-key add - && apt-add-repository https://packages.microsoft.com/ubuntu/19.10/prod
-# RUN apt-get update && \
-#     apt-get install -y apt-transport-https && \
-#     apt-get update && \
-#     apt-get install -y dotnet-sdk-3.1 && \
-#     apt-get update && \
-#     apt-get install -y aspnetcore-runtime-3.1 && \
-#     apt-get install -y dotnet-runtime-3.1
+#Install .NET and SDK Runtimeon Linux
 RUN curl -O https://dot.net/v1/dotnet-install.sh && /bin/bash ./dotnet-install.sh -c 3.1 && rm -rf dotnet-install.sh
 
 #Install AgentDVR dependicies
@@ -27,8 +18,8 @@ RUN apt-get update
 RUN add-apt-repository ppa:jonathonf/ffmpeg-4 && apt-get install -y ffmpeg
 RUN apt-get update  && apt-get install -y libtbb-dev libc6-dev gss-ntlmssp && apt-get install -y libgdiplus && \
     apt install -y multiarch-support && \
-    wget http://security.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo8_1.5.2-0ubuntu5.18.04.4_"${BUILD_ARCH}".deb && dpkg -i libjpeg-turbo8_1.5.2-0ubuntu5.18.04.4_amd64.deb && \
-    wget http://fr.archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg8-empty/libjpeg8_8c-2ubuntu8_"${BUILD_ARCH}".deb && dpkg -i libjpeg8_8c-2ubuntu8_amd64.deb
+    wget http://security.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo8_1.5.2-0ubuntu5.18.04.4_$BUILD_ARCH.deb && dpkg -i libjpeg-turbo8_1.5.2-0ubuntu5.18.04.4_amd64.deb && \
+    wget http://fr.archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg8-empty/libjpeg8_8c-2ubuntu8_$BUILD_ARCH.deb && dpkg -i libjpeg8_8c-2ubuntu8_amd64.deb
 
 #Download and unpack AgentDVR
 RUN if [ "${FILE_LOCATION_SET}" = "true" ]; then \
