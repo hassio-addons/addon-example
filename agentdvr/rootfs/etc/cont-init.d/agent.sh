@@ -11,7 +11,7 @@ if ! bashio::fs.directory_exists '/config/agentdvr/Media/XML'; then
     mkdir -p /agent/Media
     bashio::log.info 'Creating symbolic link to /config/agentdvr for configuration storage...'
     ln -s /config/agentdvr/Media/XML/ /agent/Media/
-    /usr/bin/dotnet /agent/Agent.dll &
+    ~/.dotnet/dotnet /agent/Agent.dll &
     while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' 127.0.0.1:8090)" != "200" ]]; do sleep 1; done
     kill $!
     bashio::log.info 'Updating agent media storage to /media/AgentDVR/...'
