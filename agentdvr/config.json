@@ -33,6 +33,7 @@
     },
     "panel_icon": "mdi:cctv",
     "panel_title": "AgentDVR",
+    "image": "jpeterson37/agentdvr-{arch}",
     "init": true,
     "map": ["config:rw", "media:rw"],
     "watchdog": "tcp://[HOST]:[PORT:8090]"
