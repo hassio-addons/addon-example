@@ -1,4 +1,14 @@
 # Home Assistant Community Add-on: AgentDVR
+[![Release][agentdvr-release-shield]][owr-release] ![Project Stage][project-stage-shield] [![License][license-shield]](LICENSE.md)
+![Supports aarch64 Architecture][aarch64-shield]
+![Supports amd64 Architecture][amd64-shield]
+![Supports armhf Architecture][armhf-shield]
+![Supports armv7 Architecture][armv7-shield]
+![Supports i386 Architecture][i386-shield]
+![Project Maintenance][maintenance-shield]
+
+
+[![Support JP-Tek-Services on Patreon][patreon-shield]][patreon]
 
 Agent DVR is a standalone replacement for iSpy that runs as a service, uses less CPU and features a web user interface that is accessible from anywhere with no port forwarding required!
 
@@ -99,3 +109,21 @@ SOFTWARE.
 [reddit]: https://reddit.com/r/homeassistant
 [releases]: https://github.com/jpeterson37/addon-agentdvr/releases
 [ispyurl]: https://www.ispyconnect.com/
+[contributors]: https://github.com/jpeterson37/addon-agentdvr/graphs/contributors
+[discord-ha]: https://discord.gg/c5DvZ4e
+[discord]: https://discord.gg/EXjEee3dnw
+[jpeterson]: https://github.com/Jpeterson37
+[issue]: https://github.com/JP-Tek-Services/addon-open-weather-radio/issues
+[releases]: https://github.com/JP-Tek-Services/addon-open-weather-radio/releases
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
+[patreon-shield]: https://jpeterson37.github.io/patreon/patreon.png
+[patreon]: https://www.patreon.com/jptekservices
+[agentdvr-release-shield]: https://img.shields.io/badge/version-v0.02.0-blue.svg
+[owr-release]: https://github.com/JP-Tek-Services/addon-open-weather-radio/
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+[aarch64-shield]: https://img.shields.io/badge/aarch64-no-red.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
+[license-shield]: https://img.shields.io/github/license/JP-Tek-Services/addon-open-weather-radio

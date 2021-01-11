@@ -31,7 +31,7 @@ RUN if [ "${FILE_LOCATION_SET}" = "true" ]; then \
     else \
     #Get latest instead
     echo "Downloading latest" && \
-    wget -c $(wget -qO- "https://www.ispyconnect.com/api/Agent/DownloadLocation2?productID=24&is64=true&platform=Linux" | tr -d '"') -O agent.zip; \
+    wget -c https://ispyfiles.azureedge.net/downloads/Agent_Linux64_3_0_7_0.zip -O agent.zip; \
     fi && \
     unzip agent.zip -d /agent && \
     rm agent.zip

@@ -1,6 +1,6 @@
 {
     "name": "Agent DVR",
-    "version": "v0.01.0",
+    "version": "v0.02.0",
 
     "slug": "agentdvr",
     "description": "Addon to run AgentDVR with Home Assistant",
