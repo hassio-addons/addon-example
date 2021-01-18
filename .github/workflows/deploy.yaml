@@ -135,7 +135,7 @@ jobs:
     name: 📢 Publish ${{ needs.information.output.name }} ${{ needs.information.output.version }}
     needs:
       - information
-      - build
+      - deploy
     environment:
       name: ${{ needs.information.outputs.environment }}
     runs-on: ubuntu-latest
