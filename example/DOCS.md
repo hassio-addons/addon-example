@@ -48,7 +48,7 @@ dealing with an unknown issue. Possible values are:
 - `debug`: Shows detailed debug information.
 - `info`: Normal (usually) interesting events.
 - `warning`: Exceptional occurrences that are not errors.
-- `error`:  Runtime errors that do not require immediate action.
+- `error`: Runtime errors that do not require immediate action.
 - `fatal`: Something went terribly wrong. Add-on becomes unusable.
 
 Please note that each level automatically includes log messages from a
@@ -68,12 +68,12 @@ This repository keeps a change log using [GitHub's releases][releases]
 functionality.
 
 Releases are based on [Semantic Versioning][semver], and use the format
-of ``MAJOR.MINOR.PATCH``. In a nutshell, the version will be incremented
+of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
 based on the following:
 
-- ``MAJOR``: Incompatible or major changes.
-- ``MINOR``: Backwards-compatible new features and enhancements.
-- ``PATCH``: Backwards-compatible bugfixes and package updates.
+- `MAJOR`: Incompatible or major changes.
+- `MINOR`: Backwards-compatible new features and enhancements.
+- `PATCH`: Backwards-compatible bugfixes and package updates.
 
 ## Support
 
