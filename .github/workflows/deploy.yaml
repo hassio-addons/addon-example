@@ -178,7 +178,7 @@ jobs:
               "addon": "${{ needs.information.outputs.slug }}",
               "name": "${{ needs.information.outputs.name }}",
               "repository": "${{ github.repository }}",
-              "version": "${{ needs.information.outputs.version }}"
+              "version": "${{ github.event.release.tag_name }}"
             }
 
   publish-stable:
@@ -202,5 +202,5 @@ jobs:
               "addon": "${{ needs.information.outputs.slug }}",
               "name": "${{ needs.information.outputs.name }}",
               "repository": "${{ github.repository }}",
-              "version": "${{ needs.information.outputs.version }}"
+              "version": "${{ github.event.release.tag_name }}"
             }
