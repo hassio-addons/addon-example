@@ -34,9 +34,8 @@ It shows off several features and structures like:
 - General Dockerfile structure and setup.
 - The use of the `config.json` and `build.json` files.
 - General shell scripting structure (`run.sh`).
-- Quality assurance using CodeClimate.
-- Continuous integration and deployment using GitLab.
-- Usage of the Community Home Assistant Add-ons build environment.
+- Continuous integration and deployment using GitHub Actions.
+- Deployment to the GitHub Container registry.
 - Small use of the Bash function library in our base images.
 - The use of Docker label schema.
 
