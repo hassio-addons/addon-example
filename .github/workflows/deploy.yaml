@@ -131,8 +131,9 @@ jobs:
             BUILD_REPOSITORY=${{ github.repository }}
             BUILD_VERSION=${{ needs.information.outputs.version }}
 
-  publish:
-    name: 📢 Publish ${{ needs.information.output.name }} ${{ needs.information.output.version }}
+  publish-edge:
+    name: 📢 Publish to edge repository
+    if: needs.information.outputs.environment == 'edge'
     needs:
       - information
       - deploy
@@ -141,10 +142,60 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🚀 Dispatch repository updater update signal
-        uses: peter-evans/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@v1.1.3
         with:
           token: ${{ secrets.DISPATCH_TOKEN }}
-          repository: hassio-addons/repository-test
+          repository: hassio-addons/repository-edge
+          event-type: update
+          client-payload: >
+            {
+              "addon": "${{ needs.information.outputs.slug }}",
+              "name": "${{ needs.information.outputs.name }}",
+              "repository": "${{ github.repository }}",
+              "version": "${{ needs.information.outputs.version }}"
+            }
+
+  publish-beta:
+    name: 📢 Publish to beta repository
+    if: |
+      needs.information.outputs.environment == 'beta' ||
+      needs.information.outputs.environment == 'stable'
+    needs:
+      - information
+      - deploy
+    environment:
+      name: ${{ needs.information.outputs.environment }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚀 Dispatch repository updater update signal
+        uses: peter-evans/repository-dispatch@v1.1.3
+        with:
+          token: ${{ secrets.DISPATCH_TOKEN }}
+          repository: hassio-addons/repository-beta
+          event-type: update
+          client-payload: >
+            {
+              "addon": "${{ needs.information.outputs.slug }}",
+              "name": "${{ needs.information.outputs.name }}",
+              "repository": "${{ github.repository }}",
+              "version": "${{ needs.information.outputs.version }}"
+            }
+
+  publish-beta:
+    name: 📢 Publish to stable repository
+    if: needs.information.outputs.environment == 'stable'
+    needs:
+      - information
+      - deploy
+    environment:
+      name: ${{ needs.information.outputs.environment }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚀 Dispatch repository updater update signal
+        uses: peter-evans/repository-dispatch@v1.1.3
+        with:
+          token: ${{ secrets.DISPATCH_TOKEN }}
+          repository: hassio-addons/repository
           event-type: update
           client-payload: >
             {
