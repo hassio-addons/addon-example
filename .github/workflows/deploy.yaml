@@ -113,6 +113,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: ⤵️ Download base image
+        run: docker pull "${{ steps.flags.outputs.from }}"
       - name: ✅ Verify authenticity of base image
         run: |
           vcn authenticate \
