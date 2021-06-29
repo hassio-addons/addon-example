@@ -1,0 +1,23 @@
+{
+  "name": "Hassio-Octoprint",
+  "version": "dev",
+  "slug": "hassio-octoprint",
+  "description": "Install vanilla octoprint in your hassio host",
+  "url": "https://github.com/franzbischoff/hassio-octoprint",
+  "init": false,
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armhf",
+    "armv7",
+    "i386"
+  ],
+  "options": {
+    "log_level": "info",
+    "seconds_between_quotes": 5
+  },
+  "schema": {
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
+    "seconds_between_quotes": "int(1,120)"
+  }
+}
