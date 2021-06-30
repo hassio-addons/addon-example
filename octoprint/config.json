@@ -1,0 +1,42 @@
+{
+  "name": "Hassio-Octoprint",
+  "version": "dev4",
+  "slug": "hassio-octoprint",
+  "description": "Install vanilla octoprint in your hassio host",
+  "url": "https://github.com/franzbischoff/hassio-octoprint",
+  "startup": "application",
+  "init": false,
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armhf",
+    "armv7",
+    "i386"
+  ],
+  "apparmor": true,
+  "devices": [
+    "/dev/video0",
+    "/dev/ttyACM0"
+  ],
+  "host_network": false,
+  "ingress": true,
+  "ingress_port": 5000,
+  "map": [
+    "config"
+  ],
+  "ports": {
+    "5000/tcp": 5000
+  },
+  "ports_description": {
+    "5000/tcp": "Web interface"
+  },
+  "options": {
+    "log_level": "info",
+    "seconds_between_quotes": 5
+  },
+  "schema": {
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
+    "seconds_between_quotes": "int(1,120)"
+  },
+  "webui": "http://[HOST]:[PORT:5000]/"
+}

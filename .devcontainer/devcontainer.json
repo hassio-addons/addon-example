@@ -1,0 +1,54 @@
+{
+  "name": "Home Assistant Add-Ons",
+  "context": "..",
+  "dockerFile": "Dockerfile",
+  "appPort": [
+    "7123:7123",
+    "7357:4357"
+  ],
+  "postStartCommand": "service docker start",
+  "runArgs": [
+    "-e",
+    "GIT_EDITOR=code --wait",
+    "--privileged"
+  ],
+  "containerEnv": {
+    "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
+  },
+  "extensions": [
+	"esbenp.prettier-vscode",
+	"samuelcolvin.jinjahtml",
+	"ms-azuretools.vscode-docker",
+	"docsmsft.docs-yaml",
+	"editorconfig.editorconfig",
+	"dbaeumer.vscode-eslint",
+	"redvanworkshop.explorer-exclude-vscode-extension",
+	"lacroixdavid1.vscode-format-context-menu",
+	"donjayamanne.git-extension-pack",
+	"nhoizey.gremlins",
+	"spywhere.guides",
+	"exiasr.hadolint",
+	"bmarkovic.haproxy",
+	"lukas-tr.materialdesignicons-intellisense",
+	"ibm.output-colorizer",
+	"richie5um2.vscode-sort-json",
+	"spmeesseman.vscode-taskexplorer",
+	"hbenl.vscode-test-explorer",
+	"ms-vscode.test-adapter-converter",
+	"ms-vscode.vscode-typescript-tslint-plugin",
+	"redhat.vscode-yaml",
+	"pascalreitermann93.vscode-yaml-sort",
+	"visualstudioexptteam.vscodeintellicode"
+],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "/bin/bash"
+      }
+    },
+    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.tabs.enabled": true,
+    "terminal.integrated.tabs.focusMode": "singleClick"
+  }
+}
