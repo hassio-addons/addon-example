@@ -1,14 +1,8 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.0.0
 # version.sh
-ARG OCTO_RELEASE=1.6.1
+# ARG OCTO_RELEASE=1.6.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
-
-# Copy root filesystem
-# COPY rootfs /
-RUN rm /etc/cont-init.d/00-banner.sh
-RUN rm /etc/cont-init.d/01-log-level.sh
-RUN rm /etc/cont-finish.d/99-message.sh
 
 # Setup base
 RUN apk add --no-cache \
@@ -40,11 +34,13 @@ RUN apk add --no-cache \
   python3-dev=3.9.5-r1 \
   linux-headers=5.10.41-r0
 
+ENV OCTO_RELEASE=1.6.1
+
 # Install octoprint
 RUN	curl -fsSLO --compressed --retry 3 --retry-delay 10 \
-  "https://github.com/OctoPrint/OctoPrint/archive/refs/tags/${OCTO_RELEASE}.tar.gz" \
-  && mkdir -p /opt/octoprint \
-  && tar xzf "${OCTO_RELEASE}.tar.gz" --strip-components 1 -C /opt/octoprint --no-same-owner
+  https://github.com/OctoPrint/OctoPrint/archive/refs/tags/${OCTO_RELEASE}.tar.gz
+RUN mkdir -p /opt/octoprint
+RUN tar xzf ${OCTO_RELEASE}.tar.gz --strip-components 1 -C /opt/octoprint --no-same-owner
 
 WORKDIR /opt/octoprint
 RUN pip install --no-cache-dir .
@@ -83,10 +79,10 @@ VOLUME /octoprint
 ENTRYPOINT ["/init"]
 
 # Build arguments
-ARG BUILD_ARCH=amd64
+ARG BUILD_ARCH="armhf|armv7|aarch64|i386|amd64"
 ARG BUILD_DATE=20210627
-ARG BUILD_DESCRIPTION=testebuild
-ARG BUILD_NAME=testename
+ARG BUILD_DESCRIPTION="Install vanilla octoprint in your hassio host"
+ARG BUILD_NAME=Hassio-Octoprint
 ARG BUILD_REF=testeref
 ARG BUILD_REPOSITORY=testerepo
 ARG BUILD_VERSION=1.0
