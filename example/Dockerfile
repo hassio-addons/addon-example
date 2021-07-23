@@ -11,7 +11,8 @@ RUN apk add --no-cache \
     coreutils=8.32-r2 \
     wget=1.21.1-r1 \
     nginx=1.14.2-2+deb10u4 \
-    mkdir -p /run/nginx
+    \
+    && mkdir -p /run/nginx
 
 #Add nginx and create the run folder for nginx.
 #RUN apk --no-cache  add nginx;mkdir -p /run/nginx;
