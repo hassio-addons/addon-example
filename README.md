@@ -32,7 +32,7 @@ It shows off several features and structures like:
 
 - Full blown GitHub repository.
 - General Dockerfile structure and setup.
-- The use of the `config.json` and `build.json` files.
+- The use of the `config.yaml` and `build.yaml` files.
 - General structure on how to use S6 overlay with services.
 - Basic usage of Bashio.
 - Continuous integration and deployment using GitHub Actions.
