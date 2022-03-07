@@ -28,8 +28,8 @@ comparison to installing any other Home Assistant add-on.
 1. Check the logs of the "Example" add-on to see it in action.
 
 Home Assistant, by default, ships with the Community Add-ons store installed.
-However, it is missing (for any reason), you can add it by clicking the button
-My button below.
+However, if it is missing (for any reason), you can add it by clicking the
+button My button below.
 
 [!Add repository to your Home Assitant instance.][repository-badge]][repository]
 
