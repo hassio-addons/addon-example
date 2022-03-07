@@ -22,7 +22,7 @@ comparison to installing any other Home Assistant add-on.
 
 1. Click the Home Assistant My button below to open the add-on on your Home
    Assistant instance.
-  [![Open your Home Assistant instance and show the dashboard of a Supervisor add-on.][addon-badge]][addon]
+   [![Open your Home Assistant instance and show the dashboard of a Supervisor add-on.][addon-badge]][addon]
 1. Click the "Install" button to install the add-on.
 1. Start the "Example" add-on.
 1. Check the logs of the "Example" add-on to see it in action.
