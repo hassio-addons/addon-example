@@ -21,8 +21,10 @@ The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Home Assistant add-on.
 
 1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.  
+   Assistant instance.
+
    [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+
 1. Click the "Install" button to install the add-on.
 1. Start the "Example" add-on.
 1. Check the logs of the "Example" add-on to see it in action.
