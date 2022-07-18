@@ -1,6 +1,8 @@
-FROM ghcr.io/hassio-addons/base:12.2.0
+FROM ghcr.io/hassio-addons/base:12.2.1
 # Copy root filesystem
 COPY rootfs /
+
+ENV S6_VERBOSITY=1
 
 # Setup base
 RUN apk add --no-cache \
