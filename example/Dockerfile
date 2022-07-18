@@ -1,9 +1,6 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:12.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
-
-# Copy root filesystem
-COPY rootfs /
 
 # Setup base
 RUN apk add --no-cache \
