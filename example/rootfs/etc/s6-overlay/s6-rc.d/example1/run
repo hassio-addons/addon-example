@@ -1,9 +1,10 @@
 #!/command/with-contenv bashio
+# shellcheck shell=bash
 # ==============================================================================
 # Home Assistant Community Add-on: Example
-# Runs example2 script
+# Runs example1 script
 # ==============================================================================
 
-bashio::log.info "Starting Example2..."
+bashio::log.info "Starting Example1..."
 
-exec /usr/bin/example2.sh
+exec /usr/bin/example1.sh

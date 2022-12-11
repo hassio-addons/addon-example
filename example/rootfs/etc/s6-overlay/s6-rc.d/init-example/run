@@ -1,10 +1,8 @@
 #!/command/with-contenv bashio
+# shellcheck shell=bash
 # ==============================================================================
 # Home Assistant Community Add-on: Example
+# Example init script, runs before any other service
 # ==============================================================================
-if [[ "${1}" -ne 0 ]] && [[ "${1}" -ne 256 ]]; then
-  bashio::log.warning "example 2 crashed, halting add-on"
-  /run/s6/basedir/bin/halt
-fi
 
-bashio::log.info "example 2 stoped, restarting..."
+bashio::log.info "Oh, hi! I'm the init script!"
