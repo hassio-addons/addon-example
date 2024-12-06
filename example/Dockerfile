@@ -8,7 +8,7 @@ COPY rootfs /
 # Setup base
 RUN apk add --no-cache \
     coreutils=9.5-r1 \
-    wget=1.24.5-r0
+    wget=1.25.0-r0
 
 # Build arguments
 ARG BUILD_ARCH
