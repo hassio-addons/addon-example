@@ -25,6 +25,9 @@ get_quote_online() {
     number=$(( ( RANDOM % 999 )  + 1 ))
     html=$(wget -q -O - "https://www.quotationspage.com/quote/${number}.html")
 
+    # The page might not contain a quote at all, in which case grep exits
+    # non-zero. Bashio runs with errexit (and inherit_errexit), so swallow
+    # that here and let the caller deal with an empty quote instead.
     quote=$(grep -e "<dt>" -e "</dd>" <<< "${html}" \
         | awk -F'[<>]' '{
             if($2 ~ /dt/)
@@ -32,7 +35,7 @@ get_quote_online() {
             else if($4 ~ /b/)
                 { print "-- " $7 "\\n(" $19 ")"}
         }'
-    )
+    ) || true
 
     echo "${quote}"
 }
@@ -81,11 +84,15 @@ display_quote() {
 
     bashio::log.trace "${FUNCNAME[0]}"
 
+    quote=""
     if wget -q --spider https://www.quotationspage.com; then
         quote=$(get_quote_online)
-    else
+    fi
+
+    if bashio::var.is_empty "${quote}"; then
         bashio::log.notice \
-            'Could not connect to quotationspage.com, using an offline quote'
+            'Could not fetch a quote from quotationspage.com,' \
+            'using an offline quote'
         quote=$(get_quote_offline)
     fi
 
